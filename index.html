@@ -204,6 +204,44 @@ aside::-webkit-scrollbar { width: 4px; }
 aside::-webkit-scrollbar-track { background: var(--bg2); }
 aside::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
+@media (max-width: 768px) {
+
+  /* stack main vertically instead of side by side */
+  main { flex-direction: column; }
+
+  /* sidebar goes below the sphere, full width */
+  aside {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    overflow-y: visible;
+    overflow-x: auto;
+  }
+
+  /* each section in sidebar shrinks to fit */
+  aside > div { flex: 1; min-width: 140px; }
+
+  /* viewport takes up top portion of screen */
+  #viewport { 
+    min-height: 45vh; 
+    flex: none;
+  }
+
+  /* smaller header */
+  header { padding: 8px 14px; }
+  header h1 { font-size: 14px; }
+
+  /* gate buttons smaller */
+  .gate-btn { font-size: 14px; }
+
+  /* hide footer on mobile, saves space */
+  footer { display: none; }
+}
+
 </style>
 </head>
 <body>
