@@ -25,12 +25,6 @@
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
-html, body {
-  position: fixed;
-  width: 100%;
-  overflow: hidden;
-}
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -824,11 +818,6 @@ function renderLoop() {
   updateLabels();
   renderer.render(threeScene, camera);
 }
-
-document.getElementById('viewport').addEventListener('touchmove', 
-  e => e.preventDefault(), 
-  { passive: false }
-);
 
 buildAxisLabels();
 updateArrow(stateToBloch(psi));
